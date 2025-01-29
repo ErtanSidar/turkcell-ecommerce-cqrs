@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: turkcellecommercecqrs
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/ecommerce-cqrs"
+    username: postgres
+    password: test
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    showSql: true
+    hibernate:
+      ddlAuto: update

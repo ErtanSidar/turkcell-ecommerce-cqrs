@@ -1,0 +1,4 @@
+package com.turkcell.ecommerce.cqrs.core.configuration;
+
+public class PipelineConfiguration {
+}

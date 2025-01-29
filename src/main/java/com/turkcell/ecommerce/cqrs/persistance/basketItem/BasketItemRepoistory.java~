@@ -1,0 +1,4 @@
+package com.turkcell.ecommerce.cqrs.persistance.basketItem;
+
+public interface BasketItemRepoistory {
+}
