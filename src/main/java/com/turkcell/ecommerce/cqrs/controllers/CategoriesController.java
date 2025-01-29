@@ -20,4 +20,6 @@ public class CategoriesController extends BaseController {
     public CreatedCategoryResponse createCategory(@RequestBody CreateCategoryCommand createCategoryCommand) {
         return createCategoryCommand.execute(pipeline);
     }
+
+
 }
