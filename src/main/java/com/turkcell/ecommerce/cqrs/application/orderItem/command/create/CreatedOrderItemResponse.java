@@ -1,4 +1,4 @@
-package com.turkcell.ecommerce.cqrs.application.basketItem.command.update;
+package com.turkcell.ecommerce.cqrs.application.orderItem.command.create;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,8 +9,8 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdatedBasketItemResponse {
-    private UUID id;
+public class CreatedOrderItemResponse {
+    private UUID orderId;
     private UUID productId;
     private int quantity;
     private double totalPrice;

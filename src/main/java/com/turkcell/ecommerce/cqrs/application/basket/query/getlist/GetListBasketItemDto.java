@@ -1,4 +1,4 @@
-package com.turkcell.ecommerce.cqrs.application.basket.query.getbyid;
+package com.turkcell.ecommerce.cqrs.application.basket.query.getlist;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +9,6 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetBasketByIdResponse {
+public class GetListBasketItemDto {
     private UUID id;
 }
