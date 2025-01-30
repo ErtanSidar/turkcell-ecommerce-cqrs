@@ -1,0 +1,14 @@
+package com.turkcell.ecommerce.cqrs.core.pipelines.validation;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import javax.xml.crypto.Data;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ValidationError {
+    private String field;
+    private String error;
+}
