@@ -1,4 +1,0 @@
-package com.turkcell.ecommerce.cqrs.persistance.product;
-
-public interface ProductRepository {
-}
