@@ -7,17 +7,17 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-public class GetListBasketQuery implements Command<List<GetListBasketItemDto>> {
+public class GetListBasketQuery implements Command<List<GetListBasketResponse>> {
 
     @Component
     @RequiredArgsConstructor
     public static class GetListBasketQueryHandler implements
-            Command.Handler<GetListBasketQuery, List<GetListBasketItemDto>> {
+            Command.Handler<GetListBasketQuery, List<GetListBasketResponse>> {
 
         private final BasketRepository basketRepository;
 
         @Override
-        public List<GetListBasketItemDto> handle(GetListBasketQuery getListBasketQuery) {
+        public List<GetListBasketResponse> handle(GetListBasketQuery getListBasketQuery) {
             return List.of();
         }
     }

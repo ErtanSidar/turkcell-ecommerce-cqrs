@@ -6,7 +6,12 @@ import com.turkcell.ecommerce.cqrs.persistance.category.CategoryRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.util.UUID;
+
+@Data
 public class GetCategoryByIdQuery implements Command<GetCategoryByIdResponse> {
+
+    private UUID id;
 
     @Data
     @RequiredArgsConstructor

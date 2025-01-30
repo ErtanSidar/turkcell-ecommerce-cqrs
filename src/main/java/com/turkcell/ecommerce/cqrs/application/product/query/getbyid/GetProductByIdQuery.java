@@ -2,23 +2,27 @@ package com.turkcell.ecommerce.cqrs.application.product.query.getbyid;
 
 import an.awesome.pipelinr.Command;
 import com.turkcell.ecommerce.cqrs.persistance.product.ProductRepository;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.UUID;
 
-public class GetProductByIdQuery implements Command<List<GetProductByIdResponse>> {
+@Data
+public class GetProductByIdQuery implements Command<GetProductByIdResponse> {
+
+    private UUID id;
 
     @Component
     @RequiredArgsConstructor
     public static class GetProductByIdQueryHandler implements
-            Command.Handler<GetProductByIdQuery, List<GetProductByIdResponse>> {
+            Command.Handler<GetProductByIdQuery, GetProductByIdResponse> {
 
         private final ProductRepository productRepository;
 
         @Override
-        public List<GetProductByIdResponse> handle(GetProductByIdQuery getProductByIdQuery) {
-            return List.of();
+        public GetProductByIdResponse handle(GetProductByIdQuery getProductByIdQuery) {
+            return null;
         }
     }
 }

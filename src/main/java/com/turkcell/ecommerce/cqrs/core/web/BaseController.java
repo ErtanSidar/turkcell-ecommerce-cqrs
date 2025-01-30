@@ -4,7 +4,6 @@ import an.awesome.pipelinr.Pipeline;
 
 public class BaseController {
 
-
     protected final Pipeline pipeline;
 
     public BaseController(Pipeline pipeline) {
