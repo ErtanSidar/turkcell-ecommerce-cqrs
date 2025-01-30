@@ -20,5 +20,5 @@ public class UpdatedProductResponse {
 
     private int stock;
 
-    private int categoryId;
+    private UUID categoryId;
 }

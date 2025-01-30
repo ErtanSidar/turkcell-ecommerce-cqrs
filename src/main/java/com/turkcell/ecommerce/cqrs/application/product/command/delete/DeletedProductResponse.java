@@ -21,5 +21,5 @@ public class DeletedProductResponse {
 
     private int stock;
 
-    private int categoryId;
+    private UUID categoryId;
 }

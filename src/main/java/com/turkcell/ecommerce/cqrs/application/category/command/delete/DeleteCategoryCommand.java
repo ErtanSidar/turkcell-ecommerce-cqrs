@@ -1,6 +1,8 @@
 package com.turkcell.ecommerce.cqrs.application.category.command.delete;
 
 import an.awesome.pipelinr.Command;
+import com.turkcell.ecommerce.cqrs.application.category.mappers.CategoryMapper;
+import com.turkcell.ecommerce.cqrs.domain.entity.Category;
 import com.turkcell.ecommerce.cqrs.persistance.category.CategoryRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +24,13 @@ public class DeleteCategoryCommand implements Command<DeletedCategoryResponse> {
 
         @Override
         public DeletedCategoryResponse handle(DeleteCategoryCommand deleteCategoryCommand) {
-            return null;
+
+            CategoryMapper categoryMapper = CategoryMapper.INSTANCE;
+
+            Category category = categoryRepository.findById(deleteCategoryCommand.getId()).orElseThrow();
+            categoryRepository.delete(category);
+
+            return categoryMapper.converCategoryToDeletedCategoryResponse(category);
         }
     }
 }

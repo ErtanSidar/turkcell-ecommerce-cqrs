@@ -18,16 +18,18 @@ public class UpdateCategoryCommand implements Command<UpdatedCategoryResponse> {
     @Component
     @RequiredArgsConstructor
     public static class UpdateCategoryCommandHandler implements
-            Command.Handler<UpdateCategoryCommand, UpdatedCategoryResponse> {
+    Command.Handler<UpdateCategoryCommand, UpdatedCategoryResponse> {
 
         private final CategoryRepository categoryRepository;
 
         @Override
         public UpdatedCategoryResponse handle(UpdateCategoryCommand updateCategoryCommand) {
 
+            Category category = categoryRepository.findById(updateCategoryCommand.getId()).orElseThrow();
+
             CategoryMapper categoryMapper = CategoryMapper.INSTANCE;
 
-            Category category = categoryMapper.converUpdateCategoryCommandToCategory(updateCategoryCommand);
+            category = categoryMapper.converUpdateCategoryCommandToCategory(updateCategoryCommand);
 
             categoryRepository.save(category);
 

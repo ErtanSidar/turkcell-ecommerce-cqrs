@@ -5,6 +5,8 @@ import com.turkcell.ecommerce.cqrs.application.product.command.create.CreateProd
 import com.turkcell.ecommerce.cqrs.application.product.command.create.CreatedProductResponse;
 import com.turkcell.ecommerce.cqrs.application.product.command.delete.DeleteProductCommand;
 import com.turkcell.ecommerce.cqrs.application.product.command.delete.DeletedProductResponse;
+import com.turkcell.ecommerce.cqrs.application.product.command.update.UpdateProductCommand;
+import com.turkcell.ecommerce.cqrs.application.product.command.update.UpdatedProductResponse;
 import com.turkcell.ecommerce.cqrs.application.product.query.getbyid.GetProductByIdQuery;
 import com.turkcell.ecommerce.cqrs.application.product.query.getbyid.GetProductByIdResponse;
 import com.turkcell.ecommerce.cqrs.application.product.query.getlist.GetListProductQuery;
@@ -42,8 +44,8 @@ public class ProductsController extends BaseController {
     }
 
     @PutMapping
-    public CreatedProductResponse update(@RequestBody CreateProductCommand createProductCommand) {
-        return createProductCommand.execute(pipeline);
+    public UpdatedProductResponse update(@RequestBody UpdateProductCommand updateProductCommand) {
+        return updateProductCommand.execute(pipeline);
     }
 
     @DeleteMapping

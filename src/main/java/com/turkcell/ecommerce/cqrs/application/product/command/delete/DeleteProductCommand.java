@@ -1,6 +1,8 @@
 package com.turkcell.ecommerce.cqrs.application.product.command.delete;
 
 import an.awesome.pipelinr.Command;
+import com.turkcell.ecommerce.cqrs.application.product.mappers.ProductMapper;
+import com.turkcell.ecommerce.cqrs.domain.entity.Product;
 import com.turkcell.ecommerce.cqrs.persistance.product.ProductRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +24,10 @@ public class DeleteProductCommand implements Command<DeletedProductResponse> {
 
         @Override
         public DeletedProductResponse handle(DeleteProductCommand deleteProductCommand) {
-            return null;
+            ProductMapper productMapper = ProductMapper.INSTANCE;
+            Product product = productRepository.findById(deleteProductCommand.getId()).orElse(null);
+            productRepository.delete(product);
+            return productMapper.convertProductToDeletedProductResponse(product);
         }
 
     }

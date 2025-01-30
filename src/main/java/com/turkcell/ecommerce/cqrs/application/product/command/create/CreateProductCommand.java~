@@ -12,8 +12,6 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
-
 @Data
 public class CreateProductCommand implements Command<CreatedProductResponse> {
 
@@ -33,7 +31,7 @@ public class CreateProductCommand implements Command<CreatedProductResponse> {
     private int stock;
 
     @NotNull(message = "Category ID is required")
-    private UUID categoryId;
+    private int categoryId;
 
     private String imageUrl;
 

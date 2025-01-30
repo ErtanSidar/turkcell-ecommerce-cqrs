@@ -20,7 +20,7 @@ public class GetListProductResponse {
 
     private int stock;
 
-    private int categoryId;
+    private UUID categoryId;
 
     private String imageUrl;
 }

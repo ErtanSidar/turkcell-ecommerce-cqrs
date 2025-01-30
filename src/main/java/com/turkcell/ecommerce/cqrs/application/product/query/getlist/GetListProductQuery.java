@@ -1,6 +1,8 @@
 package com.turkcell.ecommerce.cqrs.application.product.query.getlist;
 
 import an.awesome.pipelinr.Command;
+import com.turkcell.ecommerce.cqrs.application.product.mappers.ProductMapper;
+import com.turkcell.ecommerce.cqrs.domain.entity.Product;
 import com.turkcell.ecommerce.cqrs.persistance.product.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -18,7 +20,9 @@ public class GetListProductQuery implements Command<List<GetListProductResponse>
 
         @Override
         public List<GetListProductResponse> handle(GetListProductQuery getListProductQuery) {
-            return List.of();
+            ProductMapper productMapper = ProductMapper.INSTANCE;
+            List<Product> products = productRepository.findAll();
+            return productMapper.convertProductsToGetListProductResponse(products);
         }
     }
 }

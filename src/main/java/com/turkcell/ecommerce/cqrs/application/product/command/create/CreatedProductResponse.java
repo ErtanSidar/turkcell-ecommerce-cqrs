@@ -21,7 +21,7 @@ public class CreatedProductResponse {
 
     private int stock;
 
-    private int categoryId;
+    private UUID categoryId;
 
     private String imageUrl;
 }
